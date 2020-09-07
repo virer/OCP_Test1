@@ -1,4 +1,4 @@
 FROM php:7.3-apache
 COPY src/ /var/www/html/
-ARG ENV=tst
-ENV ENV=$ENV
+ARG SEB_ENV=tst
+ENV SEB_ENV=$ENV

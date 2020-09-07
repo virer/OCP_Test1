@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>PHP Hello World <?php if( $_ENV['ENV'] != "") { echo $_ENV['ENV']; }?></title>
+    <title>PHP Hello World <?php if( $_ENV['SEB_ENV'] != "") { echo $_ENV['SEB_ENV']; }?></title>
   </head>
   <body>
     <?php if ($_POST['who'] != '') {?>
