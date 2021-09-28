@@ -1,0 +1,28 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: kafka-jdbc
+  namespace: confluent
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      namespace: confluent
+      name: 'kafka-jdbc:latest'
+  resources: {}
+  successfulBuildsHistoryLimit: 2
+  failedBuildsHistoryLimit: 2
+  strategy:
+    type: Docker
+    dockerStrategy: {}
+  postCommit: {}
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/virer/OCP_Test1.git'
+      ref: master
+    contextDir: kafka-jdbc
+  triggers:
+    - type: ConfigChange
+  runPolicy: Serial
